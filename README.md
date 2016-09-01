@@ -1,3 +1,4 @@
-# Tag it
+# tagit
+*Notebook of the web*
 
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/blob/master/README.md)
