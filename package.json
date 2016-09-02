@@ -2,7 +2,7 @@
   "name": "tagit",
   "version": "1.0.0",
   "description": "The notebook of the web",
-  "main": "index.js",
+  "main": "./client/index.js",
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors",
     "build": "webpack --progress --colors"
