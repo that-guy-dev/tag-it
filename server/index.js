@@ -13,7 +13,7 @@ app.use(function(req,res,next){
 
 app.use(bodyParser.urlencoded({
   extended: true,
-  parameterLimit:500
+  parameterLimit:5000,
 }));
 
 app.use(function(req, res, next) {
@@ -28,10 +28,11 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/tag', function (req, res) {
+app.get('/tagArticle', function (req, res) {
   read('http://www.visir.is/drykkfelldi-skipstjorinn-fekk-100-thusund-krona-sekt-og-helt-for-sinni-afram/article/2016160909893', function(err, article, meta) {
 
-    console.log(article.content);
+    return res.jsonp(article);
+    //console.log(article.content);
     /*console.log(article.title);
     console.log(article.html);
     console.log(article.document);
