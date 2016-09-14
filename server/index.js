@@ -12,9 +12,11 @@ app.use(function(req,res,next){
   next();
 });
 
+app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({
+  limit: '50mb',
   extended: true,
-  parameterLimit: 5000,
+  parameterLimit: 50000,
 }));
 
 app.use(function(req, res, next) {
@@ -29,11 +31,13 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/tagArticle', function (req, res) {
 
-  const url = 'http://yhoo.it/1MJUFov';
-  ArticleParser.extract(url).then((article) => {
-    
+app.post('/tagArticle', function (req, res) {
+
+  console.log(req.body.articleUrl);
+  //const url = 'http://yhoo.it/1MJUFov';
+  ArticleParser.extract(req.body.articleUrl).then((article) => {
+
     return res.jsonp(article);
   }).catch((err) => {
     console.log(err);

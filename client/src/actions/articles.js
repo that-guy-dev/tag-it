@@ -7,11 +7,10 @@ function tagArticleRequest(url) {
   };
 }
 
-function tagArticleSuccess(article, articles) {
+function tagArticleSuccess(article) {
   return {
     type: types.TAG_ARTICLE_SUCCESS,
     article,
-    articles,
   };
 }
 
@@ -19,6 +18,13 @@ function tagArticleFailure(error) {
   return {
     type: types.TAG_ARTICLE_FAILURE,
     error,
+  };
+}
+
+function updateArticles(article){
+  return {
+    type: types.UPDATE_ARTICLES,
+    article,
   };
 }
 
@@ -35,13 +41,16 @@ function tagArticleFailure(error) {
 
 export function tagArticle(url) {
 
-  //const body = { url };
+  const body = { articleUrl: url };
   const config = {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-    //body: JSON.stringify(body),
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
   };
-  const serviceUrl = 'http://localhost:3030/tagArticle';
+  const serviceUrl = 'http://localhost:3030/tagArticle';;
 
   return (dispatch, getState) => {
     dispatch(tagArticleRequest(url));
@@ -53,9 +62,10 @@ export function tagArticle(url) {
         return response.json();
       })
       .then(article => {
-        const articles = getState().articles.items;
-        articles.push(article);
-        dispatch(tagArticleSuccess(article, articles));
+        //const articles = getState().articles.items;
+        //articles.push(article);
+        dispatch(tagArticleSuccess(article));
+        dispatch(updateArticles(article));
       })
       .catch(error => {
         dispatch(tagArticleFailure(error.message));

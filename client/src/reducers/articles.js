@@ -8,7 +8,7 @@ import update from 'react-addons-update';
 
 const initialState = {
   items: [],
-}
+};
 
 export default function loans(state = initialState, action) {
   switch (action.type) {
@@ -49,7 +49,7 @@ export default function loans(state = initialState, action) {
       };
     case UPDATE_ARTICLES: {
       return update(state, {
-        articles: { $push: [action.article] },
+        items: { $push: [action.article] },
       });
     }
     default:

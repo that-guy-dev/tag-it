@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { tagArticle } from '../actions/articles';
+import Article from './Article';
 
 class Main extends Component {
 
@@ -12,6 +13,11 @@ class Main extends Component {
   }
 
   render() {
+
+    const articles = this.props.articles.map(article => (
+      <Article article={article} />
+    ));
+
     return (
       <div>
         <h2>Tag it</h2>
@@ -19,13 +25,23 @@ class Main extends Component {
           Url: <input type="text" name="url" ref="url" />
           <button onClick={e => this.tag(e)}>TAG</button>
         </div>
+        <div>
+          {articles}
+        </div>
       </div>
     );
   }
 }
 
 Main.propTypes = {
+  articles: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
-export default connect()(Main);
+function mapStateToProps(state) {
+  return {
+    articles: state.articles.items,
+  }
+}
+
+export default connect(mapStateToProps)(Main);
