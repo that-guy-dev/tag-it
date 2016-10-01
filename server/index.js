@@ -31,29 +31,23 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 app.post('/tagArticle', function (req, res) {
+  read(req.body.articleUrl, function(err, article, meta) {
 
-  console.log(req.body.articleUrl);
-  //const url = 'http://yhoo.it/1MJUFov';
+    const taggedArticle = {
+      title: article.title,
+      content: article.content,
+    };
+    article.close();
+    return res.jsonp(taggedArticle);
+  });
+});
+
+app.post('/tagArticleOld', function (req, res) {
   ArticleParser.extract(req.body.articleUrl).then((article) => {
-
     return res.jsonp(article);
   }).catch((err) => {
     console.log(err);
-  });
-
-});
-
-app.get('/tagArticleReadability', function (req, res) {
-  read('http://redis.io/commands/append', function(err, article, meta) {
-    /*console.log(article.content);
-    console.log(article.title);
-    console.log(article.html);
-    console.log(article.document);
-    console.log(meta);
-    article.close();*/
-    return res.jsonp("sad");
   });
 });
 
