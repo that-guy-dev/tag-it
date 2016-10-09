@@ -14,8 +14,8 @@ class Main extends Component {
 
   render() {
 
-    const articles = this.props.articles.map(article => (
-      <Article article={article} />
+    const articles = this.props.articles.map((article, i) => (
+      <Article index={i} article={article} />
     ));
 
     return (

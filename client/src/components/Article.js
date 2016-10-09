@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 
 const Article = props => {
-  const { article } = props;
+  const { article, key } = props;
+  console.log(props);
 
   const html = { __html: article.content };
 
   return (
     <div style={{ }}>
-      <h3>{article.title}</h3>
-      <div dangerouslySetInnerHTML={html} />
+      <h3>{article.title} {key}</h3>
     </div>
   );
 };
