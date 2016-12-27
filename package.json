@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "http": "0.0.0",
     "node-readability": "^2.2.0",
+    "node-uuid": "^1.4.7",
     "postcss": "^5.0.19",
     "react": "^15.1.0",
     "react-addons-update": "^15.3.1",

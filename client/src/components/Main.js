@@ -8,14 +8,27 @@ class Main extends Component {
   tag = () => {
     const { dispatch } = this.props;
     const url = this.refs.url.value;
-    console.log(url);
     dispatch(tagArticle(url));
+  }
+
+  openArticle = (id) => {
+    console.log(id);
   }
 
   render() {
 
+    /*const articles = this.props.articles.map((article, index) => (
+      <Article key={index} article={article} />
+    ));*/
+
     const articles = this.props.articles.map(article => (
-      <Article article={article} />
+      <div
+        key={article.id}
+        onClick={e => this.openArticle(article.id)}
+        style={{ cursor: 'pointer' }}
+      >
+        <h3>{article.title}</h3>
+      </div>
     ));
 
     return (

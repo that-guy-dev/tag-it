@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const read = require('node-readability');
 const stream = require('stream');
 const ArticleParser = require('article-parser');
+const uuid = require('node-uuid');
 //const fetch = require('node-fetch');
 
 const app = express();
@@ -33,8 +34,8 @@ app.use(function(req, res, next) {
 
 app.post('/tagArticle', function (req, res) {
   read(req.body.articleUrl, function(err, article, meta) {
-
     const taggedArticle = {
+      id: uuid.v1(),
       title: article.title,
       content: article.content,
     };
