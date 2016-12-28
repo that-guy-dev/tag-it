@@ -17,18 +17,8 @@ class Main extends Component {
 
   render() {
 
-    /*const articles = this.props.articles.map((article, index) => (
-      <Article key={index} article={article} />
-    ));*/
-
-    const articles = this.props.articles.map(article => (
-      <div
-        key={article.id}
-        onClick={e => this.openArticle(article.id)}
-        style={{ cursor: 'pointer' }}
-      >
-        <h3>{article.title}</h3>
-      </div>
+    const articles = this.props.articles.map((article, i) => (
+      <Article index={i} article={article} key={i} />
     ));
 
     return (
@@ -54,7 +44,7 @@ Main.propTypes = {
 function mapStateToProps(state) {
   return {
     articles: state.articles.items,
-  }
+  };
 }
 
 export default connect(mapStateToProps)(Main);

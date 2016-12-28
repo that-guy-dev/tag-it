@@ -50,7 +50,7 @@ export function tagArticle(url) {
     },
     body: JSON.stringify(body),
   };
-  const serviceUrl = 'http://localhost:3030/tagArticle';;
+  const serviceUrl = 'http://localhost:3030/tagArticle';
 
   return (dispatch, getState) => {
     dispatch(tagArticleRequest(url));
