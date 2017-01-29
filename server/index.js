@@ -54,11 +54,13 @@ app.get('/articles', function (req, res) {
 app.post('/tagArticle', function (req, res) {
 
   const url = req.body.articleUrl;
+  const tags = req.body.tags;
   read(url, function(err, article, meta) {
     const taggedArticle = {
       title: article.title,
       content: article.content,
       url,
+      tags,
     };
 
     saveArticle(taggedArticle);

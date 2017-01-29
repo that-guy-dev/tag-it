@@ -1,4 +1,5 @@
 
+
 function clickHandler(e) {
 
   chrome.tabs.query(
@@ -8,8 +9,9 @@ function clickHandler(e) {
     },
     function (foundTabs) {
       if (foundTabs.length > 0) {
-        var url = foundTabs[0].url;
-        $.post('http://localhost:3030/tagArticle', { articleUrl: url });
+        const url = foundTabs[0].url;
+        const tags = document.getElementById('tags').value.split(',');
+        $.post('http://localhost:3030/tagArticle', { articleUrl: url, tags });
       } else {
         // there's no window or no selected tab
       }
