@@ -30,10 +30,6 @@ class Main extends Component {
       <div>
         <h2>Tag it</h2>
         <div>
-          Url: <input type="text" name="url" ref="url" />
-          <button onClick={e => this.tag(e)}>TAG</button>
-        </div>
-        <div>
           {articles}
         </div>
       </div>
