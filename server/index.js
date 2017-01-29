@@ -41,6 +41,18 @@ function saveArticle(article) {
   });
 }
 
+app.get('/article/:id', function (req, res) {
+
+  MongoClient.connect(mongourl, function(err, db) {
+    const collection = db.collection('articles');
+    collection.findOne({
+        _id: ObjectID(req.params.id),
+      }, function(err, article) {
+        res.json(article);
+    });
+  });
+});
+
 app.get('/articles', function (req, res) {
   MongoClient.connect(mongourl, function(err, db) {
     const collection = db.collection('articles');

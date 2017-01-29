@@ -1,30 +1,44 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchArticle } from '../actions/article';
 
-const Article = props => {
-  const { article, key } = props;
-  const html = { __html: article.content };
+class Article extends Component {
 
-/*  const tags = article.tags.map((a) => {
-    return a;
-  });*/
-  const tags = article.tags ?
-    article.tags.map(tag => <span>{tag}, </span>) : '';
+  componentWillMount = () => {
+    const { dispatch, params } = this.props;
+    dispatch(fetchArticle(params.id));
+  }
 
-  return (
-    <div style={{ }}>
-      <h3>{article.title}</h3>
-      {article.url}
-      <div style={{ paddingTop: 20 }}>
-        <span style={{ fontWeight: 'bolder' }}>Tags:</span> {tags}
+  render() {
+    const { article } = this.props;
+
+    const html = { __html: article.content };
+    const tags = article.tags ?
+      article.tags.map(tag => <span>{tag}, </span>) : '';
+
+    return (
+      <div>
+        <h3>{article.title}</h3>
+        {article.url}
+        <div style={{ paddingTop: 20 }}>
+          <span style={{ fontWeight: 'bolder' }}>Tags:</span> {tags}
+        </div>
+        <div dangerouslySetInnerHTML={html} />
       </div>
-      {/* <div dangerouslySetInnerHTML={html} /> */}
-    </div>
-  );
-};
+    );
+  }
+}
 
 Article.propTypes = {
   article: PropTypes.object.isRequired,
-  key: PropTypes.number.isRequired,
+  params: PropTypes.object,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Article;
+function mapStateToProps(state) {
+  return {
+    article: state.article,
+  };
+}
+
+export default connect(mapStateToProps)(Article);

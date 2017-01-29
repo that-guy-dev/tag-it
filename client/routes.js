@@ -8,6 +8,7 @@ import {
 } from 'react-router';
 import App from './src/containers/App';
 import Main from './src/components/Main';
+import Article from './src/components/Article';
 
 class Routes extends Component {
 
@@ -42,6 +43,7 @@ class Routes extends Component {
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Main} />
+          <Route path="/article/:id" component={Article} />
         </Route>
       </Router>
     );

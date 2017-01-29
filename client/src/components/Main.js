@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import { tagArticle, fetchArticles } from '../actions/articles';
-import Article from './Article';
 
 class Main extends Component {
 
@@ -16,14 +16,16 @@ class Main extends Component {
     dispatch(tagArticle(url));
   }
 
-  openArticle = (id) => {
-    console.log(id);
+  openArticle = (e, article) => {
+    browserHistory.push(`${'/article/'}${article['_id']}`);
   }
 
   render() {
 
     const articles = this.props.articles.map((article, i) => (
-      <Article index={i} article={article} key={i} />
+      <div onClick={e => this.openArticle(e, article)} style={{ fontSize: 16, fontWeight: 'bolder', cursor: 'pointer', paddingTop: 16 }} key={i}>
+        {article.title}
+      </div>
     ));
 
     return (
