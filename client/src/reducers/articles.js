@@ -1,6 +1,6 @@
 import {
   TAG_ARTICLE, TAG_ARTICLE_SUCCESS, TAG_ARTICLE_FAILURE,
-  FETCH_ARTICLES, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE,
+  FETCH_ARTICLES_REQUEST, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE,
   UPDATE_ARTICLES,
 } from '../constants/ActionTypes';
 
@@ -27,7 +27,7 @@ export default function loans(state = initialState, action) {
         ...state,
         ...action,
       };
-    case FETCH_ARTICLES:
+    case FETCH_ARTICLES_REQUEST:
       return {
         ...state,
         ...action,

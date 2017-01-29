@@ -5,8 +5,11 @@ const read = require('node-readability');
 const stream = require('stream');
 const ArticleParser = require('article-parser');
 const uuid = require('node-uuid');
+const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID
 //const fetch = require('node-fetch');
 
+const mongourl = 'mongodb://localhost:27017/tagit';
 const app = express();
 
 app.use(function(req,res,next){
@@ -32,25 +35,47 @@ app.use(function(req, res, next) {
   next();
 });
 
+function saveArticle(article) {
+  MongoClient.connect(mongourl, function(err, db) {
+    db.collection('articles').insertOne(article);
+  });
+}
+
+app.get('/articles', function (req, res) {
+  MongoClient.connect(mongourl, function(err, db) {
+    const collection = db.collection('articles');
+    const findParams = {};
+    collection.find(findParams).toArray(function(err, docs) {
+      res.jsonp(docs);
+    });
+  });
+});
+
 app.post('/tagArticle', function (req, res) {
-  read(req.body.articleUrl, function(err, article, meta) {
+
+  const url = req.body.articleUrl;
+  read(url, function(err, article, meta) {
     const taggedArticle = {
-      id: uuid.v1(),
       title: article.title,
       content: article.content,
+      url,
     };
+
+    saveArticle(taggedArticle);
     article.close();
+
     return res.jsonp(taggedArticle);
   });
 });
 
+/*
 app.post('/tagArticleOld', function (req, res) {
   ArticleParser.extract(req.body.articleUrl).then((article) => {
     return res.jsonp(article);
   }).catch((err) => {
     console.log(err);
   });
-});
+});*/
 
 http.createServer(app).listen(3030, function () {
   console.log('Server listening on port 3030');

@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { tagArticle } from '../actions/articles';
+import { tagArticle, fetchArticles } from '../actions/articles';
 import Article from './Article';
 
 class Main extends Component {
+
+  componentDidMount = () => {
+    const { dispatch } = this.props;
+    dispatch(fetchArticles());
+  }
 
   tag = () => {
     const { dispatch } = this.props;

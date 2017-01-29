@@ -7,7 +7,7 @@ const Article = props => {
   return (
     <div style={{ }}>
       <h3>{article.title} {key}</h3>
-      <div dangerouslySetInnerHTML={html} />
+      {/* <div dangerouslySetInnerHTML={html} /> */}
     </div>
   );
 };
