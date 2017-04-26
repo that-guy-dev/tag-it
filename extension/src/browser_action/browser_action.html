@@ -6,27 +6,41 @@
 		<script src="/js/tagit.js"></script>
 
 		<style type="text/css">
+    body {
+      margin: 0;
+    }
 			#mainPopup {
 				padding: 10px;
 				height: 200px;
 				width: 400px;
 				font-family: Helvetica, Ubuntu, Arial, sans-serif;
+        background: #00BCD4;
 			}
 			h1 {
 				font-size: 2em;
 			}
+      img {
+        float: left;
+        margin-right: 13px;
+      }
+      input {
+        float: left;
+      }
 		</style>
   </head>
   <body>
 		<div id="mainPopup">
-			<h1>Tag it!</h1>
+      <img src="../../img/logo.png" alt="">
+      <div>
+        <input type="text" id="urlpath" />
+      </div>
+      <div style="clear:both;"></div>
 			<div>
-				<button id="tagButton">Tag It B</button>
+				<input type="text" id="tags" placeholder="Tags, seperate with comma" />
 			</div>
-			<div>
-				<label>Tags, seperate with comma</lable>
-				<input type="text" id="tags" />
-			</div>
+      <div>
+        <button id="tagButton">Tag It B</button>
+      </div>
 		</div>
 
   </body>

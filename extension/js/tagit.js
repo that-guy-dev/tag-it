@@ -1,6 +1,5 @@
-
-
 function clickHandler(e) {
+  document.getElementById('#urlpath').value = "jkdlsa";
 
   chrome.tabs.query(
     {

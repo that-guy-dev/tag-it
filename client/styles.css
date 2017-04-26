@@ -1,0 +1,35 @@
+* {
+font-family: "proxima-nova",sans-serif;
+}
+
+body {
+  background: rgba(158, 158, 158, 0.16);
+
+}
+
+#app {
+
+}
+.article-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-header {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.article {
+  flex-grow: 1;
+  margin: 10px;
+  width: 20%;
+  cursor: pointer;
+}
+
+.temp-img {
+  height: 200px;
+  background: white;
+  margin-bottom: 15px;
+}
