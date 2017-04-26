@@ -26,19 +26,30 @@ body {
   font-weight: 200;
   font-size: 1.5rem;
   margin-left: 15px;
-    width: 80%;
-
+  width: 80%;
 }
 
 .article {
   flex-grow: 1;
   margin: 10px;
   width: 20%;
+  height: 245px;
   cursor: pointer;
+  box-shadow: rgba(50,50,93,.0980392) 1px 1px 14px 0px, rgba(0,0,0,.0666667) 0 5px 15px;
+  /*rgba(50, 50, 93, 0.02) 6px 7px 0px 1px, rgba(0,0,0,.0666667) 0 5px 15px*/
 }
 
 .temp-img {
   height: 200px;
   background: #9E9E9E;
-  margin-bottom: 15px;
+  margin: 0;
+}
+
+.title {
+  padding: 12px 8px;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.9rem;
 }

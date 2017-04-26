@@ -19,7 +19,7 @@ class Articles extends Component {
         const articles = this.props.articles.map((article, i) => ( 
             <div className="article" onClick = { e => this.openArticle(e, article) } style = { {} } key = { i } >
                 <div className="temp-img"></div>
-                { article.title }
+                <p className="title">{ article.title }</p>
             </div>
         ));
 
