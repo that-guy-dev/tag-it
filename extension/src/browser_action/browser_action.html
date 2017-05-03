@@ -9,38 +9,63 @@
     body {
       margin: 0;
     }
-			#mainPopup {
-				padding: 10px;
-				height: 200px;
-				width: 400px;
-				font-family: Helvetica, Ubuntu, Arial, sans-serif;
-        background: #00BCD4;
-			}
-			h1 {
-				font-size: 2em;
-			}
-      img {
-        float: left;
-        margin-right: 13px;
-      }
-      input {
-        float: left;
-      }
-		</style>
+    #mainPopup {
+      font-family: Helvetica, Ubuntu, Arial, sans-serif;
+      background: #f3f3f3;
+      height: 100%;
+      width: 400px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    img {
+      display: block;
+    }
+    label {
+      width: 100%;
+      font-size: 14px;
+    }
+    input {
+      margin: 10px 0;
+      height: 31px;
+      color: #444444;
+      padding: 6px 7px;
+      font-size: 16px;
+      font-style: italic;
+      width: 74%;
+
+    }
+    .tags {
+      margin: 10px 0;
+      color: hsl(0, 0%, 27%);
+      font-size: 14px;
+      padding: 8px;
+    }
+    #tagButton{
+      background:hsl(150, 53%, 48%);
+      border: none;
+      font-size: 17px;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 38px;
+      height: 65px;
+      width: 65px;
+      margin-left: 10px;
+    }
+  </style>
   </head>
   <body>
 		<div id="mainPopup">
       <img src="../../img/logo.png" alt="">
-      <div>
+      <!--<div>
+        <label for="">Url</label>
         <input type="text" id="urlpath" />
-      </div>
-      <div style="clear:both;"></div>
-			<div>
-				<input type="text" id="tags" placeholder="Tags, seperate with comma" />
+      </div>-->
+			<div class="tags">
+        <label for=""></label>
+				<input type="text" id="tags" placeholder="seperate tags with comma" />
+        <button id="tagButton">go</button>
 			</div>
-      <div>
-        <button id="tagButton">Tag It B</button>
-      </div>
 		</div>
 
   </body>

@@ -1,6 +1,4 @@
 function clickHandler(e) {
-  document.getElementById('#urlpath').value = "jkdlsa";
-
   chrome.tabs.query(
     {
       currentWindow: true,
@@ -19,5 +17,5 @@ function clickHandler(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('button').addEventListener('click', clickHandler);
+  document.querySelector('#tagButton').addEventListener('click', clickHandler);
 });

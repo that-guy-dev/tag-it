@@ -4,7 +4,8 @@ font-family: "proxima-nova",sans-serif;
 
 body {
   /*background: hsl(0, 2%, 100%);*/
-  background: #F6F9FC;
+  /*background: #F6F9FC;*/
+  background: hsla(0, 0%, 31%, 0.08)
 }
 
 #app {
