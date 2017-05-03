@@ -14,14 +14,24 @@ function clickHandler(e) {
       if (foundTabs.length > 0) {
         const url = foundTabs[0].url;
         $(".tag span").add($(".tag a")).remove();
-        $(".tag").text().replace(/ /g,'')
         const tags = [];
-        $(".tag").each(function(){ tags.push($(this).text());});
+        $(".tag").each(function(){ 
+          tags.push($(this).text());
+        });
         console.log(tags);
-        $.post('http://localhost:3030/tagArticle', { articleUrl: url, tags });
-      } else {
-        // there's no window or no selected tab
-      }
+        $("#tagButton").text("")
+        $(".spinner").removeClass("hidden")
+        $.post('http://localhost:3030/tagArticle', { articleUrl: url, tags })
+        .done( function() {
+          console.log("done");
+          $(".spinner").addClass("hidden")
+          $("#tagButton").text("tag")
+          $("#success").removeClass("hidden");
+        })
+        .fail(function() {
+          alert( "error" );
+        });
+      } 
     }
   );
 }
