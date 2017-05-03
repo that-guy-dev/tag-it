@@ -1,3 +1,9 @@
+(function( $, window, document, undefined ) {
+    $( document ).ready(function() {
+        var t = $( "#tags" ).tagging();
+    });
+})( window.jQuery, window, document );
+
 function clickHandler(e) {
   chrome.tabs.query(
     {
@@ -7,7 +13,11 @@ function clickHandler(e) {
     function (foundTabs) {
       if (foundTabs.length > 0) {
         const url = foundTabs[0].url;
-        const tags = document.getElementById('tags').value.split(',');
+        $(".tag span").add($(".tag a")).remove();
+        $(".tag").text().replace(/ /g,'')
+        const tags = [];
+        $(".tag").each(function(){ tags.push($(this).text());});
+        console.log(tags);
         $.post('http://localhost:3030/tagArticle', { articleUrl: url, tags });
       } else {
         // there's no window or no selected tab

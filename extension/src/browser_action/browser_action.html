@@ -3,6 +3,7 @@
   <head>
     <title>Tag it</title>
     <script src="/js/jquery/jquery.min.js"></script>
+    <script src="/js/tagging.min.js"></script>
 		<script src="/js/tagit.js"></script>
 
 		<style type="text/css">
@@ -16,7 +17,6 @@
       font-family: Helvetica, Ubuntu, Arial, sans-serif;
       /*background: #f3f3f3;*/
       height: 100%;
-      width: 400px;
     }
     h1 {
       font-size: 2em;
@@ -29,24 +29,27 @@
       font-size: 14px;
       float: left;
     }
-    input {
-          margin: 10px 0;
-    color: #444444;
-    font-style: italic;
-    border: 1px #4D4D4D solid;
-    font-size: 12px;
-    padding: 10px;
-    border-radius: 3px;
-    }
     .url, .tags {
-        margin: 10px 14px;
+      margin: 10px 14px;
     }
     .url input {
+      color: #444444;
+      font-style: italic;
+      border: 1px #4D4D4D solid;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 3px;
       background: #eaeaea;
-      width: 94%;
+      width: 92%;
     }
-    .tags input {
-      width: 70%;
+    .tags {
+      width: 85%;
+      color: #444444;
+      font-style: italic;
+      border: 1px #4D4D4D solid;
+      font-size: 12px;
+      padding: 8px;
+      border-radius: 3px;
     }
     #tagButton{
       background: #00CC80;
@@ -55,11 +58,38 @@
       text-transform: uppercase;
       color: #ffffff;
       font-weight: bold;
-      margin-left: 10px;
+      margin: 0 14px 13px;
       padding: 10px;
-      width: 20%;
+      width: 91%;
       border-radius: 3px;
-
+    }
+    .tag {
+      float: left;
+    padding: 5px;
+    background: #4d4d4d;
+    color: white;
+    font-size: 13px;
+    margin-right: 4px;
+    position: relative;
+    bottom: 3px;
+    margin-bottom: 6px;
+    font-style: normal;
+    }
+    .tag a {
+          margin-left: 6px;
+    background: #c3c3c3;
+    padding: 1px 4px;
+    color: #4d4d4d;
+    position: relative;
+    bottom: 1px;
+    border-radius: 13px;
+    font-size: 11px;
+    }
+    .tag a:hover {
+      cursor: pointer;    
+      }
+    .tag span, .tag a {
+      display: none;
     }
   </style>
   </head>
@@ -67,14 +97,17 @@
 		<div id="mainPopup">
       <img src="../../img/logo.png" alt="">
       <div class="url">
-        <label for="">Url</label>
+        <!--<label for="">Url</label>-->
         <input type="text" id="urlpath" value="fda" disabled />
       </div>
 			<div class="tags">
-        <label for="">Tags</label>
-				<input type="text" id="tags" placeholder="seperate tags with comma" />
-        <button id="tagButton">go</button>
+        <!--<label for="">Tags</label>-->
+				<!--<input type="text" id="tags" placeholder="seperate tags with comma" />-->
+        <div data-tags-input-name="tag" id="tags" placeholder="seperate tags with tab"></div>
+        
 			</div>
+              <button id="tagButton">tag</button>
+
 		</div>
 
   </body>
