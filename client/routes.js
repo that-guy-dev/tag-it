@@ -8,7 +8,7 @@ import {
 } from 'react-router';
 import App from './src/containers/App';
 import Main from './src/components/Main';
-import Article from './src/components/Article';
+import Article from './src/components/Article/Article';
 
 class Routes extends Component {
 

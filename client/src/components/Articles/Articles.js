@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import { fetchArticles } from '../actions/articles';
-import styles from '../../styles.css';
+import { fetchArticles } from '../../actions/articles';
+import styles from '../../../styles.css';
 
 class Articles extends Component {
 
@@ -19,7 +19,7 @@ class Articles extends Component {
         const articles = this.props.articles.map((article, i) => ( 
             <div className="article" onClick = { e => this.openArticle(e, article) } style = { {} } key = { i } >
                 <div className="temp-img"></div>
-                <p className="title">{ article.title }</p>
+                <p className="title" title={article.title}>{ article.title }</p>
             </div>
         ));
 

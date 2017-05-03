@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchArticle } from '../actions/article';
-import styles from '../../styles.css';
+import { fetchArticle } from '../../actions/article';
+import styles from '../../../styles.css';
 class Article extends Component {
 
   componentWillMount = () => {
