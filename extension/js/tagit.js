@@ -17,5 +17,8 @@ function clickHandler(e) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+      document.querySelector("#urlpath").value = tabs[0].url;
+  });
   document.querySelector('#tagButton').addEventListener('click', clickHandler);
 });
