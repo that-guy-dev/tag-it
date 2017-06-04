@@ -5,30 +5,48 @@ font-family: "proxima-nova",sans-serif;
 body {
   /*background: hsl(0, 2%, 100%);*/
   /*background: #F6F9FC;*/
-  background: hsla(0, 0%, 31%, 0.08)
+  background: hsla(0, 0%, 31%, 0.08);
+  margin: 0;
 }
 
 #app {
 
 }
 
-.box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
+
+.nav {
+  width: 20%;
+  background: #29abe2; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #29abe2 0%, #00ffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #29abe2 0%,#00ffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #29abe2 0%,#00ffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#00ffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.nav img {
+  width: 57%;
+  display: block;
+  margin: auto;
+  margin-top: 38px;
+}
+.articles {
+  width: 80%;
+  margin: 1rem 4rem 0rem 4rem;
+}
+
 .article-container {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
 }
 
 .article-header {
   font-weight: 200;
   font-size: 1.5rem;
   margin-left: 15px;
-  width: 80%;
 }
 
 .article {

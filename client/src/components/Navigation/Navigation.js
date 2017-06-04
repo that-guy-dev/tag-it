@@ -4,8 +4,8 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div>
-        Navigation
+      <div className="nav">
+        <img src="../../assets/img/logo.png" alt=""/>
       </div>
     );
   }

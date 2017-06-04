@@ -23,7 +23,7 @@ class Articles extends Component {
             </div>
         ));
 
-        return (<div className="box">                    
+        return (<div className="articles">                    
                     <div className="article-header">Recently tagged</div>
                     <div className="article-container">
                      { articles }

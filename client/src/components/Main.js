@@ -7,9 +7,9 @@ import Nav from './Navigation/Navigation';
 class Main extends Component {
     render() {
         return ( 
-            <div>
+            <div className="container">
                 <Nav />
-                <Articles />
+                <Articles className="articles" />
             </div>            
         );
     }
