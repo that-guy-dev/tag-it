@@ -7,10 +7,14 @@ const ArticleParser = require('article-parser');
 const uuid = require('node-uuid');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID
+//const nodeMercuryParser = require('node-mercury-parser');
 //const fetch = require('node-fetch');
+//mercury: bR3cCdczWIUO5iQy6C1T5SV6qlhUbBcRcf4zkJ8H
 
 const mongourl = 'mongodb://localhost:27017/tagit';
 const app = express();
+
+const mercury = require('mercury-parser')('bR3cCdczWIUO5iQy6C1T5SV6qlhUbBcRcf4zkJ8H');
 
 app.use(function(req,res,next){
   next();
@@ -35,7 +39,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 function saveArticle(article) {
+  
   MongoClient.connect(mongourl, function(err, db) {
     db.collection('articles').insertOne(article);
   });
@@ -63,10 +69,17 @@ app.get('/articles', function (req, res) {
   });
 });
 
-app.post('/tagArticle', function (req, res) {
-  console.log("hello");
+app.post('/tagArticle', function (req, res) {  
   const url = req.body.articleUrl;
   const tags = req.body.tags;
+
+  mercury.parse(url).then(article => {
+    article.tags = tags;     
+    saveArticle(article);
+  }).catch(err => {
+    console.log('Error: ', err);
+  });
+/*
   read(url, function(err, article, meta) {
     const taggedArticle = {
       title: article.title,
@@ -79,7 +92,7 @@ app.post('/tagArticle', function (req, res) {
     article.close();
 
     return res.jsonp(taggedArticle);
-  });
+  });*/
 });
 
 /*
