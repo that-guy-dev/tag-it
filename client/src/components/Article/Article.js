@@ -11,7 +11,6 @@ class Article extends Component {
 
   render() {
     const { article } = this.props;
-
     const html = { __html: article.content };
     const tags = article.tags ? article.tags.map(tag => <span>{tag}  </span>) : '';
 
