@@ -18,12 +18,10 @@ function clickHandler(e) {
         $(".tag").each(function(){ 
           tags.push($(this).text());
         });
-        console.log(tags);
         $("#tagButton").text("")
         $(".spinner").removeClass("hidden")
         $.post('http://localhost:3030/tagArticle', { articleUrl: url, tags })
         .done( function() {
-          console.log("done");
           $(".spinner").addClass("hidden")
           $("#tagButton").text("tag")
           $("#success").removeClass("hidden");

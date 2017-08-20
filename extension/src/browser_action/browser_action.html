@@ -12,6 +12,13 @@
     }
     body {
       margin: 0;
+      background: #29abe2; /* Old browsers */
+      background: -moz-linear-gradient(-45deg, #29abe2 0%, #00ffff 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg, #29abe2 0%,#00ffff 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg, #29abe2 0%,#00ffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#00ffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      width: 300px;
+      padding: 17px;
     }
     #mainPopup {
       font-family: Helvetica, Ubuntu, Arial, sans-serif;
@@ -23,6 +30,7 @@
     }
     img {
       display: block;
+       margin-left: 15px;
     }
     label {
       width: 100%;
@@ -35,7 +43,7 @@
     .url input {
       color: #444444;
       font-style: italic;
-      border: 1px #4D4D4D solid;
+      border: 0px #4D4D4D solid;
       font-size: 12px;
       padding: 10px;
       border-radius: 3px;
@@ -46,9 +54,7 @@
       width: 85%;
       color: #444444;
       font-style: italic;
-      border: 1px #4D4D4D solid;
       font-size: 12px;
-      padding: 8px;
       border-radius: 3px;
     }
     #tagButton{
@@ -66,15 +72,16 @@
     }
     .tag {
       float: left;
-    padding: 5px;
-    background: #4d4d4d;
-    color: white;
-    font-size: 13px;
-    margin-right: 4px;
-    position: relative;
-    bottom: 3px;
-    margin-bottom: 6px;
-    font-style: normal;
+      padding: 2px;
+      border: 0px solid #eaeaea;
+      color: #444444;
+      font-size: 13px;
+      position: relative;
+      bottom: 3px;
+      margin-bottom: 6px;
+      border-bottom: 2px solid #444444;
+      font-style: italic;
+      margin-right: 10px;
     }
     .tag a {
           margin-left: 6px;
