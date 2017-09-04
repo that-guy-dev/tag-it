@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
+import styled from 'styled-components';
+import { fetchTags } from '../../actions/tags';
+import Button from '../../../styles.js';
 
-class Navigation extends Component {
+class Tags extends Component {
   componentWillMount = () => {
-
+    const { dispatch } = this.props;
+    dispatch(fetchTags());
   }
   render() {
+    const tags = this.props.tags.map((tags, i) => ( 
+      <li key={i}>{tags.tags}</li>
+    ));
     return (
+      
       <div className="nav">
-        <img src="../../assets/img/logo.png" alt=""/>
-        <div className="tags">
-          <li>Relay</li>
+        <div className="nav-container">
+          <img src="../../assets/img/logo.png" alt=""/>
+          <div className="tags">            
+            { tags }
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default Navigation;
-
-
-
-/*import React, { Component } from 'react';
-
-const Navigation = (props) => { 
-  return ( 
-     <div className="nav">
-        <img src="../../assets/img/logo.png" alt=""/>
-        <div className="tags">
-          <li>Relay</li>
-        </div>
-      </div>  ); 
+Tags.propTypes = {
+  // tags: PropTypes.array.isRequired,
+  // dispatch: PropTypes.func.isRequired,
 };
 
-export default Navigation;*/
+function mapStateToProps(state) {
+  return {
+      tags: state.tags.items,
+  };
+}
+
+export default connect(mapStateToProps)(Tags);

@@ -1,11 +1,13 @@
 * {
-font-family: "proxima-nova",sans-serif;
+  font-family: "proxima-nova",sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 body {
   /*background: hsl(0, 2%, 100%);*/
   /*background: #F6F9FC;*/
-  background: hsla(0, 0%, 31%, 0.08);
   margin: 0;
 }
 
@@ -13,31 +15,40 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  height: 100vh;
 }
 
 .nav {
-  width: 260px;
+  width: 17vw;
   background: #29abe2; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #29abe2 0%, #00ffff 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #29abe2 0%,#00ffff 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #29abe2 0%,#00ffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#00ffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+.nav-container {
+  margin: 20px;
+}
+
 .nav img {
   display: block;
-  margin: auto;
   margin-top: 38px;
-  margin-bottom: 50px;
+}
+
+.nav .tags {
+  margin-top: 30px;
 }
 
 .nav .tags li {
   list-style: none;
   color: white;
-  margin-left: 40px;
+  font-weight: 200;
+  margin-bottom: 5px;
 }
 
 .articles {
-  width: 85%;
+  width: 83vw;
   margin: 1rem 4rem 0rem 4rem;
 }
 
@@ -47,9 +58,13 @@ body {
 }
 
 .article-header {
-  font-weight: 200;
-  font-size: 1.5rem;
-  margin-left: 15px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0px 11px;
+  /* color: #29abe2; */
+  margin-bottom: 10px;
+  border-bottom: 1px rgba(158, 158, 158, 0.2) solid;
+  padding-bottom: 13px;
 }
 
 .article {
@@ -58,7 +73,6 @@ body {
   width: 30%;
   height: 250px;
   cursor: pointer;
-  background: white;
   /*box-shadow: rgba(50,50,93,.0980392) 1px 1px 14px 0px, rgba(0,0,0,.0666667) 0 5px 15px;*/
   /*rgba(50, 50, 93, 0.02) 6px 7px 0px 1px, rgba(0,0,0,.0666667) 0 5px 15px*/
 }
@@ -84,10 +98,13 @@ body {
 }
 
 @media (max-width: 1500px) {
+  /* .nav {
+    width: 30vw;
+  }
   .articles {
-    width: 85%;
+    width: 70vw;
     margin: 1rem 4rem 0rem 4rem;
-  } 
+  }  */
   .article {
      width: 25%;
   }
@@ -100,12 +117,20 @@ body {
 }
 
 @media (max-width: 1100px) {
+
   .article {
      width: 40%;
   }
 }
 
 @media (max-width: 900px) {
+  .nav {
+    width: 40vw;
+  }
+  .articles {
+    width: 60vw;
+    margin: 1rem 4rem 0rem 4rem;
+  } 
   .article {
      width: 100%;
   }
