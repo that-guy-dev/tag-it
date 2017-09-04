@@ -15,6 +15,8 @@ class Tags extends Component {
       <li key={i}>{tags.tags}</li>
     ));
     return (      
+      <div>
+      <img className="nav-action" src="../../assets/img/logo_symbol.png"/>      
       <div className="nav">
         <div className="nav-container">
           <img src="../../assets/img/logo.png" alt=""/>
@@ -22,6 +24,7 @@ class Tags extends Component {
             { tags }
           </div>
         </div>
+      </div>
       </div>
     );
   }

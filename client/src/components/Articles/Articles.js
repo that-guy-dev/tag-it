@@ -16,7 +16,6 @@ class Articles extends Component {
     }
 
     render() {
-      
         const articles = this.props.articles.map((article, i) => ( 
             <div className="article" onClick = { e => this.openArticle(e, article) } style = { {} } key = { i } >
                 <div className="temp-img">

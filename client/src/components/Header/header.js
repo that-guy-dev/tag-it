@@ -8,7 +8,8 @@ class Header extends Component {
   render() {
     return (      
       <div className="header">
-          Good morning Úlli
+          <h3>Good morning Úlli</h3>
+          <span>let's start exploring</span>
       </div>
     );
   }
