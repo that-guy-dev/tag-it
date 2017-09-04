@@ -16,12 +16,11 @@ class Articles extends Component {
     }
 
     render() {
-        console.log(this.props);
-        
+      
         const articles = this.props.articles.map((article, i) => ( 
             <div className="article" onClick = { e => this.openArticle(e, article) } style = { {} } key = { i } >
                 <div className="temp-img">
-                    <img src={article.lead_image_url}/>
+                    <div className="article-img" style={ {backgroundImage: 'url(' + article.lead_image_url + ')'} }></div>
                 </div>
                 <p className="title" title={article.title}>{ article.title }</p>
             </div>
