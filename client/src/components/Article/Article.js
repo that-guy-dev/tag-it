@@ -13,9 +13,9 @@ class Article extends Component {
     const { article } = this.props;
     const html = { __html: article.content };
     const tags = article.tags ? article.tags.map(tag => <span>{tag}  </span>) : '';
-
+        
     return (
-      <div>
+      <div className="article-container">
         <h2 className="element">{article.title}</h2>
         {article.url}
         <div style={{ paddingTop: 20 }}>

@@ -14,8 +14,7 @@ class Tags extends Component {
     const tags = this.props.tags.map((tags, i) => ( 
       <li key={i}>{tags.tags}</li>
     ));
-    return (
-      
+    return (      
       <div className="nav">
         <div className="nav-container">
           <img src="../../assets/img/logo.png" alt=""/>

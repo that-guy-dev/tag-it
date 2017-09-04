@@ -41,7 +41,6 @@ export function fetchTags() {
       })
       .then((tags) => {
         dispatch(fetchTagSuccess(tags));
-        console.log(tags);
       })
       .catch((error) => {
         dispatch(fetchTagFailure(error.message));

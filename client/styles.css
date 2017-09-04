@@ -28,7 +28,7 @@ body {
 }
 
 .nav-container {
-  margin: 20px;
+  margin: 2vw;
 }
 
 .nav img {
@@ -78,13 +78,20 @@ body {
 }
  
 .temp-img {
-  height: 200px;
-  background: #9E9E9E;
+  height: 300px;
   margin: 0;
+  overflow: hidden;
+}
+
+.temp-img img {
+  height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .title {
-  padding: 15px 10px;
+  padding: 15px 0px;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;

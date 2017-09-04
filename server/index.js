@@ -75,6 +75,7 @@ app.post('/tagArticle', function (req, res) {
 
   mercury.parse(url).then(article => {
     article.tags = tags;     
+    
     saveArticle(article);
   }).catch(err => {
     console.log('Error: ', err);
