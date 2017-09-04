@@ -9,7 +9,7 @@ class Header extends Component {
     return (      
       <div className="header">
           <h3>Good morning Úlli</h3>
-          <span>let's start exploring</span>
+          <span>let's start reading and exploring</span>
       </div>
     );
   }

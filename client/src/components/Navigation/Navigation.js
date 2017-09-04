@@ -16,7 +16,7 @@ class Tags extends Component {
     ));
     return (      
       <div>
-      <img className="nav-action" src="../../assets/img/logo_symbol.png"/>      
+      <img className="nav-action" src="../../assets/img/logo_symbol_blue.png"/>      
       <div className="nav">
         <div className="nav-container">
           <img src="../../assets/img/logo.png" alt=""/>
