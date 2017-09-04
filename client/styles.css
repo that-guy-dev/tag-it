@@ -29,6 +29,7 @@ body {
 
 .nav-container {
   margin: 2vw;
+  margin-top: 11vh;
 }
 
 .nav img {
@@ -45,10 +46,12 @@ body {
   color: white;
   font-weight: 200;
   margin-bottom: 5px;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
 }
 
 .articles {
-  width: 83vw;
+  width: 75vw;
   margin: 1rem 4rem 0rem 4rem;
 }
 
@@ -59,7 +62,7 @@ body {
 
 .article-header {
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   margin: 0px 11px;
   /* color: #29abe2; */
   margin-bottom: 10px;
@@ -69,22 +72,24 @@ body {
 
 .article {
   flex-grow: 1;
-  margin: 10px;
+  margin: 20px;
   width: 30%;
-  height: 250px;
   cursor: pointer;
+  border: 1px rgba(0, 0, 0, 0.06) solid;
+  padding: 15px 15px 0 15px;
+  box-sizing: border-box;
   /*box-shadow: rgba(50,50,93,.0980392) 1px 1px 14px 0px, rgba(0,0,0,.0666667) 0 5px 15px;*/
   /*rgba(50, 50, 93, 0.02) 6px 7px 0px 1px, rgba(0,0,0,.0666667) 0 5px 15px*/
 }
  
 .temp-img {
-  height: 300px;
+  height: 250px;
   margin: 0;
   overflow: hidden;
 }
 
 .temp-img img {
-  height: 100%;
+  width: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);

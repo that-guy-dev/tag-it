@@ -17,7 +17,7 @@ class Tags extends Component {
     return (      
       <div className="nav">
         <div className="nav-container">
-          <img src="../../assets/img/logo.png" alt=""/>
+          {/* <img src="../../assets/img/logo.png" alt=""/> */}
           <div className="tags">            
             { tags }
           </div>
