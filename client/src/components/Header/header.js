@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import * as g from '../../../css/styles.js'
+const ContentHeader = g.ContentHeader;
+
+const Headline = styled.div`
+  color:red;
+  grid-column: 2 / -1;
+  grid-row: 2 / 5;   
+`;
 
 class Header extends Component {
   componentWillMount = () => {
@@ -7,10 +16,11 @@ class Header extends Component {
   }
   render() {
     return (      
-      <div className="header">
-          <h3>Good morning Úlli</h3>
-          <span>let's start reading and exploring</span>
-      </div>
+      <ContentHeader>
+        <Headline>Good morning Úlli</Headline>
+        <span>let's start reading and exploring</span>
+      </ContentHeader>
+
     );
   }
 }

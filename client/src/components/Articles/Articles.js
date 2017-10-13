@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { fetchArticles } from '../../actions/articles';
-import styles from '../../../styles.css';
+import styles from '../../../css/styles.css';
 
 class Articles extends Component {
 

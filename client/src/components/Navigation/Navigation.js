@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import styled from 'styled-components';
 import { fetchTags } from '../../actions/tags';
-import Button from '../../../styles.js';
+import Button from '../../../css/styles.js';
 
 class Tags extends Component {
   componentWillMount = () => {
@@ -16,7 +16,7 @@ class Tags extends Component {
     ));
     return (      
       <div>
-      <img className="nav-action" src="../../assets/img/logo_symbol_blue.png"/>      
+      {/* <img className="nav-action" src="../../assets/img/logo_symbol_blue.png"/>       */}
       <div className="nav">
         <div className="nav-container">
           <img src="../../assets/img/logo.png" alt=""/>
