@@ -11,6 +11,10 @@ const ObjectID = require('mongodb').ObjectID
 //const fetch = require('node-fetch');
 //mercury: bR3cCdczWIUO5iQy6C1T5SV6qlhUbBcRcf4zkJ8H
 
+var google = require('googleapis');
+var OAuth2 = google.auth.OAuth2;
+var jwt = require('jsonwebtoken');
+
 const mongourl = 'mongodb://localhost:27017/tagit';
 const app = express();
 
@@ -79,7 +83,14 @@ app.post('/tagArticle', function (req, res) {
     saveArticle(article);
   }).catch(err => {
     console.log('Error: ', err);
-  });
+ });
+
+ app.post('/authenticate', function(req, res) {
+
+
+ });
+
+
 /*
   read(url, function(err, article, meta) {
     const taggedArticle = {
