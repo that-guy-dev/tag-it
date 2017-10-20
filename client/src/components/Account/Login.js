@@ -6,16 +6,14 @@ class Login extends Component {
 
   render() {
 
-    const onSuccess = (response) => {
+    const onSuccess = (response) => {      
       sessionStorage.token = response;
-      browserHistory.push('/');
-      
+      browserHistory.push('/');      
     }
 
     const onFailure = (response) => {
-      console.log('failure');
       console.log(response);      
-    }  
+    }
     
     return (
       <div>
@@ -24,6 +22,9 @@ class Login extends Component {
           buttonText="Login"
           onSuccess={onSuccess}
           onFailure={onFailure}
+          approvalPrompt="force"
+          responseType="id_token"
+          isSignedIn
         />
       </div>
     );

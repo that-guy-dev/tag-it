@@ -6,6 +6,7 @@ import {
   IndexRoute,
   browserHistory,
 } from 'react-router';
+import moment from 'moment';
 import App from './src/containers/App';
 import Main from './src/components/Main';
 import Article from './src/components/Article/Article';
@@ -14,7 +15,9 @@ import Login from './src/components/Account/Login';
 class Routes extends Component {
 
   authenticate = (nextState, replace) => {    
-    if (!(sessionStorage.token && (moment() < moment(sessionStorage.token.expires)))) {
+    console.log(sessionStorage.token);
+    // && (moment() < moment(sessionStorage.token.expires)    
+    if (!(sessionStorage.token)) {      
       replace({ pathname: '/login', state: { nextPathname: nextState.location.pathname } });
     }
   }
@@ -49,9 +52,9 @@ class Routes extends Component {
     return (
       <Router history={history}>
         <Route path="/" component={App}>
-          <IndexRoute component={Main} />
+          <IndexRoute component={Main} onEnter={this.authenticate} />
           <Route path="/login" component={Login} />
-          <Route path="/article/:id" component={Article} />
+          <Route path="/article/:id" component={Article} onEnter={this.authenticate} />
         </Route>
       </Router>
     );

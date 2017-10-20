@@ -5,15 +5,18 @@ import Tags from './Navigation/Navigation';
 import Header from './Header/Header';
 
 class Main extends Component {
+
     render() {
-        return ( 
-            <div className="container">
-                <Tags />
-                <div className="content">
-                    <Header />
-                    <Articles />
-                </div>
-            </div>            
+        return (
+            <div>                           
+                <div className="container">                                    
+                    <Tags />
+                    <div className="content">
+                        <Header />                    
+                        <Articles />
+                    </div>
+                </div>            
+            </div>
         );
     }
 }
