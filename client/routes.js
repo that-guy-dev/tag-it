@@ -14,10 +14,8 @@ import Login from './src/components/Account/Login';
 
 class Routes extends Component {
 
-  authenticate = (nextState, replace) => {    
-    console.log(sessionStorage.token);
-    // && (moment() < moment(sessionStorage.token.expires)    
-    if (!(sessionStorage.token)) {      
+  authenticate = (nextState, replace) => {     
+    if (!(sessionStorage.token && (moment() < moment(sessionStorage.expires)))) {             
       replace({ pathname: '/login', state: { nextPathname: nextState.location.pathname } });
     }
   }

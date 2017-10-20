@@ -1,14 +1,16 @@
 import React, { PropTypes, Component } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { browserHistory } from 'react-router';
+import moment from 'moment';
 
 class Login extends Component {
 
   render() {
 
     const onSuccess = (response) => {      
-      sessionStorage.token = response;
-      browserHistory.push('/');      
+      sessionStorage.token = response.accessToken;
+      sessionStorage.expires = moment().add(response.tokenObj.expires_in, 'seconds');      
+      browserHistory.push('/');
     }
 
     const onFailure = (response) => {
