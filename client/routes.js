@@ -9,8 +9,15 @@ import {
 import App from './src/containers/App';
 import Main from './src/components/Main';
 import Article from './src/components/Article/Article';
+import Login from './src/components/Account/Login';
 
 class Routes extends Component {
+
+  authenticate = (nextState, replace) => {    
+    if (!(sessionStorage.token && (moment() < moment(sessionStorage.token.expires)))) {
+      replace({ pathname: '/login', state: { nextPathname: nextState.location.pathname } });
+    }
+  }
 
   render() {
     const history = syncHistoryWithStore(browserHistory, this.props.store);
@@ -43,6 +50,7 @@ class Routes extends Component {
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Main} />
+          <Route path="/login" component={Login} />
           <Route path="/article/:id" component={Article} />
         </Route>
       </Router>

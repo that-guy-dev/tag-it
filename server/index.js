@@ -44,15 +44,13 @@ app.use(function(req, res, next) {
 });
 
 
-function saveArticle(article) {
-  
+function saveArticle(article) {  
   MongoClient.connect(mongourl, function(err, db) {
     db.collection('articles').insertOne(article);
   });
 }
 
 app.get('/article/:id', function (req, res) {
-
   MongoClient.connect(mongourl, function(err, db) {
     const collection = db.collection('articles');
     collection.findOne({
@@ -85,10 +83,22 @@ app.post('/tagArticle', function (req, res) {
     console.log('Error: ', err);
  });
 
- app.post('/authenticate', function(req, res) {
+//  app.post('/authenticate', function(req, res) {
 
+//   var token = jwt.sign(user, 'moveon', {
+//     expiresIn: "2d"
+//   });
 
- });
+//   var expirationDate = moment().add(1,'d').toDate();
+//   // return the information including token as JSON
+//   res.json({
+//     ok: true,
+//     access_token: token,
+//     userName: 'b',    
+//     expires: expirationDate
+//   });
+
+//  });
 
 
 /*
