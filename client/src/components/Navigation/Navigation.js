@@ -30,6 +30,7 @@ class Tags extends Component {
             <li>Popular</li>
             <li style={{marginBottom: '20px'}}>Suggestions</li>
             { tags }
+            <li>+</li>
           </div>
         </div>
       </div>
