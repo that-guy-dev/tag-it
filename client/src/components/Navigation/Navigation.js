@@ -16,11 +16,19 @@ class Tags extends Component {
     ));
     return (      
       <div>
-      <img className="nav-action" src="../../assets/img/logo_symbol_blue.png"/>      
+      {/* <img className="nav-action" src="../../assets/img/logo_symbol_blue.png"/>       */}
       <div className="nav">
         <div className="nav-container">
           <img src="../../assets/img/logo.png" alt=""/>
-          <div className="tags">            
+          <div className="tags">       
+            <li>Favourite</li>
+            <li>In progress</li>
+            <li>Reminder</li>
+            <li>Offline access</li>
+            <li style={{marginBottom: '20px'}}>Archive</li>     
+            <li>Trending</li>
+            <li>Popular</li>
+            <li style={{marginBottom: '20px'}}>Suggestions</li>
             { tags }
           </div>
         </div>

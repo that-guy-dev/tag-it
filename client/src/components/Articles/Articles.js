@@ -26,7 +26,7 @@ class Articles extends Component {
         ));
 
         return (<div className="articles">                    
-                    <div className="article-header">Trending tags</div>
+                    <div className="article-header">Recent tags</div>
                     <div className="article-container">
                      { articles }
                     </div>

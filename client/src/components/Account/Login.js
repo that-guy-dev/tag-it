@@ -68,7 +68,6 @@ const LoginBoxWhite = styled.div`
       cursor: pointer;
     }
   }
-
 `;
 
 class Login extends Component {

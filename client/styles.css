@@ -78,23 +78,23 @@ body {
 }
 
 .nav {
-  display: none;
+  /* display: none; */
   width: 17vw;
+  height: 100vh;
   background: #5A747F; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #29abe2 0%, #00ffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #29abe2 0%,#00ffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #29abe2 0%,#00ffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(-45deg, #29abe2 0%, #3C4572 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #29abe2 0%,#3C4572 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #29abe2 0%,#3C4572 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#00ffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .nav-container {
   margin-left: 34px;
-  margin-top: 22px;
 }
 
 .nav img {
+  padding-top: 30px;
   display: block;
-  margin-top: 38px;
 }
 
 .nav .tags {
@@ -106,12 +106,8 @@ body {
   color: white;
   font-weight: 200;
   margin-bottom: 5px;
-  font-size: 1.5rem;
-  padding-bottom: 10px;
-}
-
-.articles {
-
+  font-size: 1rem;
+  padding-bottom: 5px;
 }
 
 .article-container {
@@ -121,12 +117,9 @@ body {
 
 .article-header {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0px 20px;
   /* color: #29abe2; */
-  margin-bottom: 10px;
-  border-bottom: 1px rgba(158, 158, 158, 0.2) solid;
-  padding-bottom: 13px;
 }
 
 .article {
