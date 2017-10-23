@@ -23,7 +23,7 @@ const LogoWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 `;
 
 const LoginBox = styled.div`
@@ -63,6 +63,10 @@ const LoginBoxWhite = styled.div`
     color: #807d7d;
     border: none;    
     background: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
 `;
