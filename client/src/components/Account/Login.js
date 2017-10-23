@@ -86,7 +86,7 @@ class Login extends Component {
     return (
       <Wrapper>
         <LogoWrap>
-          <img className="" src="../../assets/img/logo.png" alt="" />
+          <img className="" src="../../assets/img/logo_big.png" alt="" />
         </LogoWrap>
         <LoginBox>          
           <LoginBoxWhite>
