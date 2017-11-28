@@ -32,15 +32,14 @@ body {
 }
 
 .content .header h3 {
-  font-weight: 700;
-  font-size: 1.9rem;  
+  font-weight: 500;
   margin-bottom: 6px;
+  font-size: 1.5em;
 }
 
 .content .header span {
   margin-bottom: 8px;
-  font-style: italic;
-  color: #989898; 
+  color: #7b7b7b; 
 }
 
 .nav-action {
@@ -98,7 +97,7 @@ body {
 }
 
 .nav .tags {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .nav .tags li {
@@ -107,7 +106,7 @@ body {
   font-weight: 200;
   margin-bottom: 5px;
   font-size: 1rem;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   cursor: pointer;
 }
 
@@ -124,7 +123,6 @@ body {
 }
 
 .article {
-  flex-grow: 1;
   margin: 20px;
   width: 20%;
   cursor: pointer;
@@ -155,12 +153,12 @@ body {
 } */
 
 .title {
-  padding: 15px 0px;
+  padding: 25px 0px;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1rem;
+  font-size: 0.9rem;
   /*overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

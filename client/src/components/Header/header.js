@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { browserHistory } from 'react-router';
 
+const styles = {
+  button: {
+    position: 'absolute',
+    top: '12px',
+    right: '12px'
+  },
+}
+
 class Header extends Component {
   componentWillMount = () => {
     // const { dispatch } = this.props;
     // dispatch(fetchTags());
   }
-  render() {
+    render() {
 
     const logout = () => {
       sessionStorage.clear();
@@ -19,7 +27,7 @@ class Header extends Component {
           <h3>Good morning Úlli</h3>
           <span>let's start reading and exploring</span>
 
-          <GoogleLogout buttonText="Logout" onLogoutSuccess={logout} />
+          <GoogleLogout style={styles.button} buttonText="Logout" onLogoutSuccess={logout} />
       </div>
     );
   }
