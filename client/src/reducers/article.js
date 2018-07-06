@@ -20,7 +20,7 @@ export default function article(state = initialState, action) {
       return {
         ...state,
         ...action,
-        isFetching: false,
+        isFetching: false,  
         loaded: true,
       };
     case FETCH_ARTICLE_FAILURE:
